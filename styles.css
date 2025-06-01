@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* RESET MINIMALE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #33FF33;
+  font-family: 'VT323', monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal-container {
+  position: relative;
+  background: #010101;
+  padding: 20px;
+  border: 2px solid #0A0A0A;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  animation: flicker 3s infinite;
+  overflow: hidden;
+}
+
+/* SCANLINES per effetto CRT */
+.terminal-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.1) 50%, transparent 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* LEGGERO “FLICKER” */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%     { opacity: 0.97; }
+}
+
+/* GLOW intorno al testo */
+.prompt,
+.command,
+.output,
+.typing-effect,
+.terminal-link {
+  text-shadow: 0 0 2px #33FF33;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.typing-effect {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.command {
+  margin-left: 5px;
+}
+
+.output {
+  margin-left: 20px;
+  white-space: pre-wrap;
+}
+
+.terminal-link {
+  color: #33FF33;
+  text-decoration: none;
+}
+
+.terminal-link:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
