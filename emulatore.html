@@ -1,0 +1,96 @@
+---
+permalink: /z80emulator
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z80 Emulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="terminal-container">
+    <!-- header -->
+    <div class="header">
+      <span class="prompt">$</span>
+      <span>[ kaaeza@portfolio/z80emulator ~ ]</span>
+    </div>
+
+    <!-- titolo -->
+    <h1 class="typing-effect">Zilog Z80 Emulator</h1>
+
+    <!-- info progetto -->
+    <div class="section">
+      <span class="prompt">$</span>
+      <span class="command">cat info.txt</span>
+      <pre class="output">
+ZASM is an emulator of the Zilog Z80 CPU, written in C and designed to run entirely from the terminal.
+
+This program doesn't just execute Z80 Assembly instructions — it also displays real-time updates of the CPU registers, memory, and flags, offering a clear and educational look into how the processor works internally.
+
+The goal of this project is to replicate the behavior of the original Z80 as closely as possible, while keeping the code readable and maintainable. It's a great tool for learning about low-level architecture, emulation, and assembly programming.
+      </pre>
+    </div>
+
+    <!-- Tecnologie utilizzate -->
+    <div class="section">
+      <span class="prompt">$</span>
+      <span class="command">cat technologies.txt</span>
+      <pre class="output">
+- Programming language: C
+- Compiler: GCC
+- Operating System: ChromeOS with linux (Crostini - Debian 12) environment
+- Tools: Make
+      </pre>
+    </div>
+
+    <!-- Current status -->
+    <div class="section">
+      <span class="prompt">$</span>
+      <span class="command">cat status.txt</span>
+      <pre class="output">
+As of June 8th, 2025, the Z80 emulator is in Pre-Alpha development.
+The full set of 8-bit arithmetic and logic instructions is implemented.
+All 8-bit LD instructions between registers and memory are supported.
+The emulator features a fully modifiable 64KB memory space.
+Further instruction sets and optimizations are in progress.
+      </pre>
+    </div>
+
+    <!-- links -->
+    <div class="section">
+      <span class="prompt">$</span>
+      <span class="command">cat links.txt</span>
+      <pre class="output">
+<a href="https://github.com/kaaeza/emulatoreZ80" target="_blank">Github</a>
+</pre>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      Made By Kaaeza
+    </div>
+  </div>
+
+  <!-- script typing effect -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const element = document.querySelector('.typing-effect');
+      const text = element.textContent;
+      element.textContent = '';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 80);
+        }
+      }
+      type();
+    });
+  </script>
+</body>
+</html>
